@@ -1,0 +1,3 @@
+[console_scripts]
+run-local = excel_automation.main:main
+run-online = excel_automation.main_online:main
