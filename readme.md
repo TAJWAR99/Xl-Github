@@ -1,5 +1,2 @@
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-run-local
-run-online
+# Xl-Github
+This project automates Issue creation in Github from local or online excel files
