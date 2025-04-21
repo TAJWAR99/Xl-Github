@@ -26,6 +26,8 @@ def monitor_excel():
         # Create a mapping from header names to column indices (1-based)
         header_index_map = {header: idx + 1 for idx, header in enumerate(headers)}
 
+        labels = ["bug", "test-failure"]
+
         for row_idx, row in enumerate(sheet.iter_rows(min_row=2, max_row=sheet.max_row, values_only=True), start=2):
             row_dict = dict(zip(headers, row))  # Convert row to a dictionary
             
@@ -41,16 +43,17 @@ def monitor_excel():
             if status.lower() == "failed" and issue_created.lower() != "yes":
                 issue_title = f"{test_case_id}:{test_case_name}"
                 issue_body = f"Test Case Name: {test_case_name}\nStatus: {status}"
-                created, issue_url = create_github_issue(issue_title, issue_body, assignee, ["bug", "test-failure"], project_name, module_name, sprint_name)
+                
+                created, issue_url = create_github_issue(issue_title, issue_body, assignee, labels, 
+                                                         project_name, module_name, sprint_name)
                 if created:
                     # Update the Excel file
                     sheet.cell(row=row_idx, column=header_index_map["Issue Status"]).value = "Yes"
                     sheet.cell(row=row_idx, column=header_index_map["Issue Url"]).value = getIssueUrl(issue_url)
 
 
-    # Save the workbook with the added issue links
     workbook.save(file_path)
-    # "touch" the file (update its timestamp) to force VS Code to detect a change
+    # "touch" the file to force VS Code to detect a change
     os.utime(file_path, None)
 
     workbook.close()

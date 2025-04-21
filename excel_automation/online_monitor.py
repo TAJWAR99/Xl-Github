@@ -41,6 +41,8 @@ def online_excel_monitor():  # Keep filename param for compatibility
         # Create a mapping from header names to column indices (1-based)
         header_index_map = {header: idx + 1 for idx, header in enumerate(headers)}
 
+        labels = ["bug", "test-failure"]
+
         for i, row in enumerate(rows[1:]):
             row_dict = dict(zip(headers, row))  # Map headers to row values
 
@@ -54,9 +56,12 @@ def online_excel_monitor():  # Keep filename param for compatibility
             sprint_name = row_dict.get("Sprint", "")
             
             if status.lower() == "failed" and issue_created.lower() != "yes":
+
                 issue_title = f"{test_case_id}:{test_case_name}"
                 issue_body = f"Test Case Name: {test_case_name}\nStatus: {status}"
-                created, issue_url = create_github_issue(issue_title, issue_body, assignee, ["bug", "test-failure"], project_name, module_name, sprint_name)
+
+                created, issue_url = create_github_issue(issue_title, issue_body, assignee, labels, project_name, module_name, sprint_name)
+                
                 if created:
                     # Mark the issue as created in the sheet
                     issue_status_col = header_index_map.get("Issue Status")

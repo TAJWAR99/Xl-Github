@@ -2,8 +2,7 @@
 # 📊 Excel-GitHub Integration CLI
 
   
-
-A lightweight Python CLI tool to automate issue creation on GitHub from failed test cases listed in an Local Excel file or Google Sheet. Ideal for QA and DevOps workflows.
+A lightweight Python CLI tool to automate issue creation on GitHub from failed test cases listed in an Excel or Google Sheet. Ideal for QA and DevOps workflows.
 
 
 ## 🚀 Features
@@ -55,7 +54,7 @@ Restrict the Token to a Specific Repository (Fine-grained Token - Beta Feature).
 
 **NOTE:** Adding issue to your Github PROJECT will not work if you use Fine-grained token.
 
-## Project Files Configuration
+## 📁 Project Files Configuration
 
  **STEP-1:**
 - Rename the `credentials_config copy.py` to `credentials_config.py`
@@ -84,6 +83,32 @@ If you are working with **online google sheet**:
 
 -  Move your **credentials.json** file  to `excel_automation` folder.
 
+## 🔧 Customize your excel sheet
+
+Your column position doesn't matter. However, your naming format should match with the code's naming format. You can change these according to your excel file from the `monitor.py` and `online-monitor.py` files that handles the local excel file and the online google sheet respectively.
+
+**Headers:**
+
+Your excel headers.
+**![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeSq-d2F4FVGQFZQO-7Wic74SK6wFXKFvvmK3QKVrRgZdCEZ0LelXnYLohM9bX7KfF0jv1iBnrVBgkznYeyRXGf4P8pmhygJ73XTX9fopEc8NN6HDQUKMPvrzGo9U8WViFlwD29iQ?key=beP0j_3tn44urSvduz72LASw)**
+Headers naming format in the code which matches the actual file headers.
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc2ylFlwEDsUHLdui0luzrwl0f6MNI79FQ4n5rt7IffLMsOeH9s4HcJk2Hn2P6U4Ww_38aPI_4SxcYtm_L4PpjekK7-94cr-s01o6S5A1dYHegunkcekYP2CRYaA2Pq66AUjBAGkA?key=beP0j_3tn44urSvduz72LASw)
+**NOTE:** If you want to remove any headers, you have to remove that header variable from the code as well. However, adding any headers in your excel file don't need to be added in the code unless you need to process it.
+
+**Labels:**
+You can change the labels which you want to add in your github issue from here.
+**![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdEpk3tHSS8Zu2KbV2dg3luSl_MEN5K2QylAq9MrmxmPTAS9zkegdkB4PaC_IdEl_jM1ETqyZsaI7FuBFfjL8kf-UXBzxjsEgp2xHcSp6TZZg16MttqVtuRkKvJJcyfk8F3XYkA?key=beP0j_3tn44urSvduz72LASw)**
+
+**Issue Title and Issue Body:**
+**![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcYNJXgpNjaKvpkAUG138d_MEetQYcoTd5Ox0hU6QzJViFtUUIT7E7rDQtBcqZLv9-foMCJEINQDskumDgS3v83FV4wbCd51CYv22hdrjiLOdxiq7RZrNIF8JgrrSB_YJ8hde50DQ?key=beP0j_3tn44urSvduz72LASw)**
+You can customize your issue title according to your test. You just need to change the variables inside the curly `{}` brackets.
+Similarly, you can change the contents of your isssue body. If you want to include Steps(should be included in the excel file), just change the variables inside the curly `{}` brackets with your variables that needs to be initialized beforehand for fetching the Steps contents.
+
+**Updating excel files:**
+
+The Cli command will check for the `Issue Status` columns that doesn't have a value of "Yes" in it and will update the value for that issue if it gets `failed`.
+Also, a newly created github issue url will get added to the `Issue Url` column. So, it is mandatory that your excel file has these two columns: `Issue Status` and  `Issue Url`. You can change it as well.
+**![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd9zpNeXtTxTYVWqYjPpjmRscgztj-WGO_LKy70egK6TnSjvdd7XwFH8IZ4DHR5jRd0I9KUeitIrfF_ufmScaCXu09RDnNabdEeUjkhnptgxP26xTdCowzwdGbqv_sGE-Wi1lU_9Q?key=beP0j_3tn44urSvduz72LASw)**
 
 ## 📋 Requirements
 
@@ -115,30 +140,26 @@ pip install -e .
 
 ## 🧾 CLI Usage
 
+Go to the project directory and run these command lines. One handles local files and the other handles the google sheet.
+
 **▶️ Local Excel File Integration**
 
 ```bash
-
 run-local
-
 ```
 
 **☁️ Google Sheet Integration**
 
 ```bash
-
 run-online
-
 ```
-
 **These commands will:**
-
 - Parse your sheet
 - Find failed test cases
 - Create GitHub issues
 - Update your file with "Issue Status" and URL
 
-## Steps for integrating online Google Sheets
+## ✅ Steps for integrating online Google Sheets
 
 Google Sheets offers APIs that allow programmatic access to spreadsheets. You can use the Google Sheets API to monitor and update the sheet.
 
@@ -147,7 +168,7 @@ Google Sheets offers APIs that allow programmatic access to spreadsheets. You ca
 2.  Create a new project.
     
 3.  Enable the Google Sheets API and Google Drive API.  
-    ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXctDm_tATe2VXkPOsBTUTEi-KZwQwBLJzQ_2S0rqBU9b0bisuVd_BK3Frg031PZ5-hBgCFJpQfde-rrxddsFNblHBhjBMp49_KxjfTXd-zmMFppqBuJagXjEbKWxE0Yp6wFlZT4?key=beP0j_3tn44urSvduz72LASw)
+		    ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXctDm_tATe2VXkPOsBTUTEi-KZwQwBLJzQ_2S0rqBU9b0bisuVd_BK3Frg031PZ5-hBgCFJpQfde-rrxddsFNblHBhjBMp49_KxjfTXd-zmMFppqBuJagXjEbKWxE0Yp6wFlZT4?key=beP0j_3tn44urSvduz72LASw)
     
 4.  Create credentials (OAuth 2.0 client ID or service account key).  
 
@@ -173,10 +194,11 @@ Google Sheets offers APIs that allow programmatic access to spreadsheets. You ca
     
 	**Remember:** It's a one-time download; consider temporary access for better security.  
 
-6.  Place the File in the Correct Directory
-    
-    Save the credentials.json file in your project folder or a directory accessible by your script.
-
+6.  Place the File in the Correct Directory.
+     Save the credentials.json file in your project folder or a directory accessible by your script.
+  
 ## 📄 License
 
 MIT License © 2024 Tajwar
+
+
