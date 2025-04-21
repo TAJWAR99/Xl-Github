@@ -16,10 +16,10 @@ def online_excel_monitor():  # Keep filename param for compatibility
         raise ValueError("Google Sheets URL not configured. Please set GOOGLE_SHEETS_URL in google_sheets_config.py")
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(base_dir, "cred.json")
+    file_path = os.path.join(base_dir, "credentials.json")
     
     if not os.path.exists(file_path):
-        raise FileNotFoundError("cred.json not found. Please ensure Google Service Account credentials are properly configured.")
+        raise FileNotFoundError("credentials.json not found. Please ensure Google Service Account credentials are properly configured.")
 
     credentials = ServiceAccountCredentials.from_json_keyfile_name(file_path, ["https://spreadsheets.google.com/feeds"])
     client = gspread.authorize(credentials)
