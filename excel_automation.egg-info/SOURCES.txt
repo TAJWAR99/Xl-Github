@@ -1,11 +1,14 @@
+README.md
 setup.py
 excel_automation/__init__.py
 excel_automation/addIssueToProject.py
 excel_automation/createIssue.py
+excel_automation/credentials_config copy.py
 excel_automation/credentials_config.py
 excel_automation/getIssueUrl.py
 excel_automation/getProjectID.py
 excel_automation/globals.py
+excel_automation/google_sheets_config copy.py
 excel_automation/google_sheets_config.py
 excel_automation/main.py
 excel_automation/main_online.py
