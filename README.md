@@ -150,28 +150,28 @@ Google Sheets offers APIs that allow programmatic access to spreadsheets. You ca
     ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXctDm_tATe2VXkPOsBTUTEi-KZwQwBLJzQ_2S0rqBU9b0bisuVd_BK3Frg031PZ5-hBgCFJpQfde-rrxddsFNblHBhjBMp49_KxjfTXd-zmMFppqBuJagXjEbKWxE0Yp6wFlZT4?key=beP0j_3tn44urSvduz72LASw)
     
 4.  Create credentials (OAuth 2.0 client ID or service account key).  
-    - For automation, use a service account key.  
+
+   - For automation, use a service account key.  
       ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd7WnMfPbFRVsz2kc1-Suw7ZB0UW0q1ZympgRu1VjEWYmwKVsoZ-I71bMCAxYLsVvOZGHYOS1BIm4Dd_9JKYc3dfWRtfE2KOGbbYuZtKIM8l8pETWguVM4WrrIRwgQMmCOT-X4cgA?key=beP0j_3tn44urSvduz72LASw)
     
 
-    - Share the sheet with the **Service Account** email to give it access and provide the Editor access.
+- Share the sheet with the **Service Account** email to give it access and provide the Editor access.
 
 5.  Download the credentials JSON file.  
 
 	 To download the JSON file from Google Cloud:
 	 
-		-   Go to IAM & Admin, click on "Service Accounts."    
+	-   Go to IAM & Admin, click on "Service Accounts."    
 
-		-   Select your service account, and click on the "Keys" tab.
+	-   Select your service account, and click on the "Keys" tab.
 
-		-   Add a new key, choose "Create new key."
+	-   Add a new key, choose "Create new key."
 
-		-   Set "Key type" to "JSON" and click "Create."
+	-   Set "Key type" to "JSON" and click "Create."
 
-		-   Download the JSON file prompted by your browser.
+	-   Download the JSON file prompted by your browser.
     
-**Remember:** It's a one-time download; consider temporary access for better security.  
-  
+	**Remember:** It's a one-time download; consider temporary access for better security.  
 
 6.  Place the File in the Correct Directory
     
