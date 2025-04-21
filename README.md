@@ -96,10 +96,12 @@ Headers naming format in the code which matches the actual file headers.
 **NOTE:** If you want to remove any headers, you have to remove that header variable from the code as well. However, adding any headers in your excel file don't need to be added in the code unless you need to process it.
 
 **Labels:**
+
 You can change the labels which you want to add in your github issue from here.
 **![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdEpk3tHSS8Zu2KbV2dg3luSl_MEN5K2QylAq9MrmxmPTAS9zkegdkB4PaC_IdEl_jM1ETqyZsaI7FuBFfjL8kf-UXBzxjsEgp2xHcSp6TZZg16MttqVtuRkKvJJcyfk8F3XYkA?key=beP0j_3tn44urSvduz72LASw)**
 
 **Issue Title and Issue Body:**
+
 **![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcYNJXgpNjaKvpkAUG138d_MEetQYcoTd5Ox0hU6QzJViFtUUIT7E7rDQtBcqZLv9-foMCJEINQDskumDgS3v83FV4wbCd51CYv22hdrjiLOdxiq7RZrNIF8JgrrSB_YJ8hde50DQ?key=beP0j_3tn44urSvduz72LASw)**
 You can customize your issue title according to your test. You just need to change the variables inside the curly `{}` brackets.
 Similarly, you can change the contents of your isssue body. If you want to include Steps(should be included in the excel file), just change the variables inside the curly `{}` brackets with your variables that needs to be initialized beforehand for fetching the Steps contents.
