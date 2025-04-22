@@ -5,4 +5,7 @@ excel_automation/credentials.json
 excel_automation/local_file.txt
 excel_automation/Excel-Github-Integration.xlsx
 excel_automation/__pycache__/
+excel_automation/.DS_Store
+.DS_Store
+
 
