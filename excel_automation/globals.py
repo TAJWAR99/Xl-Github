@@ -7,6 +7,10 @@ def get_github_token():
     context = get_user_context()
     return context.get("token")
 
+def get_service_token():
+    context = get_user_context()
+    return context.get("service_token")
+
 def get_repo_name():
     context = get_user_context()
     return context.get("repo")

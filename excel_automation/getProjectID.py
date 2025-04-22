@@ -4,6 +4,7 @@ from .globals import *
 def get_project_id(project_name):
 
     GITHUB_TOKEN = get_github_token()
+    SERVICE_TOKEN = get_service_token()
     
     query = """
         query {
@@ -20,7 +21,7 @@ def get_project_id(project_name):
 
     url = "https://api.github.com/graphql"
     headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Authorization": f"Bearer {SERVICE_TOKEN}",
         "Content-Type": "application/json"
     }
 

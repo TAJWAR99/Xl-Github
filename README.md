@@ -19,17 +19,18 @@ A lightweight Python CLI tool to automate issue creation on GitHub from failed t
 ## 📦 Installation
 
   
-Clone this repository and install the package using `pip`:
+Clone this repository and install the package using `pip` (you need to have python installed in your device to use `pip`):
 
 ```bash
 
-git  clone  https://github.com/your-username/excel-automation.git
+git  clone  https://github.com/TAJWAR99/Xl-Github.git
 
-cd  excel-automation
+cd  Xl-Github
 
-pip  install  .
-
+pip install -e .
 ```
+
+
 ## 🔐 Github Repository Permission
 
 For Issue creation, you need to create a Access Token to grant access to your repository.
@@ -54,7 +55,10 @@ Restrict the Token to a Specific Repository (Fine-grained Token - Beta Feature).
 
 **NOTE:** Adding issue to your Github PROJECT will not work if you use Fine-grained token.
 
+
 ## 📁 Project Files Configuration
+
+Configure the below mentioned files that resides inside **excel_automation** folder.
 
  **STEP-1:**
 - Rename the `credentials_config copy.py` to `credentials_config.py`
@@ -64,7 +68,11 @@ Restrict the Token to a Specific Repository (Fine-grained Token - Beta Feature).
 **STEP-2:**
 Change **credentials_config.py** file:
 
-- Set `REPO_NAME` and `GITHUB_TOKEN` with your **owner/repository** name and github-token.
+- Set `REPO_NAME` with the **owner/repository** name
+- Set `GITHUB_TOKEN` your personal github-token
+- Set `SERVICE_TOKEN` the Repo owner's token**(Optional - You can keep it empty)**.
+
+**NOTE:** For using your own token as GITHUB_TOKEN, the Repo owner needs to add you as a collaborator in the repository. Also PROJECT assigning to the issue will not work unless you add the Repo owner's token to the SERVICE_TOKEN.
 
 **STEP-3:**
 Change **google_sheets_config.py** file:
@@ -142,7 +150,7 @@ pip install -e .
 
 ## 🧾 CLI Usage
 
-Go to the project directory and run these command lines. One handles local files and the other handles the google sheet.
+After configuring the project and installing all the dependencies, Go to the project directory and run these command lines. One handles local files and the other handles the google sheet.
 
 **▶️ Local Excel File Integration**
 

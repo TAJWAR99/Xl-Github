@@ -1,2 +1,3 @@
-REPO_NAME = "" # User will need to replace this with their Owner/Repo name
-GITHUB_TOKEN = "" # User will need to replace this with their Github Token
+REPO_NAME = "" # Replace this with their Owner/Repo name
+GITHUB_TOKEN = "" # Replace this with their own Token
+SERVICE_TOKEN = "" # Replace this with the PROJECT Owner's Token

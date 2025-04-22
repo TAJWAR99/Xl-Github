@@ -6,6 +6,7 @@ from .globals import *
 def add_issue_to_project(PROJECT_ID, ISSUE_NODE_ID):
 
     GITHUB_TOKEN = get_github_token()
+    SERVICE_TOKEN = get_service_token()
 
     mutation = """
     mutation {
@@ -21,7 +22,7 @@ def add_issue_to_project(PROJECT_ID, ISSUE_NODE_ID):
     url = "https://api.github.com/graphql"
     
     headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Authorization": f"Bearer {SERVICE_TOKEN}",
         "Content-Type": "application/json"
     }
 
