@@ -4,3 +4,5 @@ excel_automation/credentials_config.py
 excel_automation/credentials.json
 excel_automation/local_file.txt
 excel_automation/Excel-Github-Integration.xlsx
+excel_automation/__pycache__/
+
